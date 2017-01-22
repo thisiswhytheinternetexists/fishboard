@@ -10,3 +10,5 @@ Basic useful feature list:
 - [ ] Integration with Domoticz
 
 * Board has not been tested yet! *
+
+Datasheet for MOSFET: http://www.mouser.com/ds/2/149/FQP30N06L-244344.pdf
