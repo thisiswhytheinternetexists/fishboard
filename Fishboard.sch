@@ -3703,7 +3703,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND11" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="Q1" library="fishlib" deviceset="FQP30N06L" device=""/>
 <part name="Q2" library="fishlib" deviceset="FQP30N06L" device=""/>
-<part name="U$3" library="fishlib" deviceset="FQP30N06L" device=""/>
+<part name="Q3" library="fishlib" deviceset="FQP30N06L" device=""/>
 <part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="-KIT" value="200mA/100V/1V"/>
 <part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="-KIT" value="200mA/100V/1V"/>
 <part name="D3" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="-KIT" value="200mA/100V/1V"/>
@@ -3768,7 +3768,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND11" gate="1" x="71.12" y="2.54"/>
 <instance part="Q1" gate="G$1" x="76.2" y="76.2"/>
 <instance part="Q2" gate="G$1" x="76.2" y="45.72"/>
-<instance part="U$3" gate="G$1" x="76.2" y="17.78"/>
+<instance part="Q3" gate="G$1" x="76.2" y="17.78"/>
 <instance part="D1" gate="G$1" x="83.82" y="7.62" rot="R270"/>
 <instance part="D2" gate="G$1" x="83.82" y="35.56" rot="R270"/>
 <instance part="D3" gate="G$1" x="81.28" y="60.96" rot="R270"/>
@@ -3845,7 +3845,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="GND6" gate="1" pin="GND"/>
-<pinref part="U$3" gate="G$1" pin="3"/>
+<pinref part="Q3" gate="G$1" pin="3"/>
 <wire x1="81.28" y1="25.4" x2="78.74" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="25.4" x2="78.74" y2="22.86" width="0.1524" layer="91"/>
 </segment>
@@ -3928,7 +3928,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="R9" gate="G$1" pin="2"/>
 <wire x1="71.12" y1="17.78" x2="73.66" y2="17.78" width="0.1524" layer="91"/>
 <junction x="71.12" y="17.78"/>
-<pinref part="U$3" gate="G$1" pin="1"/>
+<pinref part="Q3" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="6"/>
@@ -4112,7 +4112,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="2"/>
+<pinref part="Q3" gate="G$1" pin="2"/>
 <pinref part="J10" gate="G$1" pin="1"/>
 <wire x1="78.74" y1="12.7" x2="83.82" y2="12.7" width="0.1524" layer="91"/>
 <junction x="83.82" y="12.7"/>
