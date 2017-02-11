@@ -9,7 +9,6 @@ Basic useful feature list:
 - [ ] Supports an SSD1306 OLED display for status and standalone operation
 - [ ] Integration with Domoticz
 
-* Board has not been tested yet! *
 
 BOM:
 | Manufacturer  | P/N | Amount |
