@@ -12,6 +12,8 @@ unsigned int localPort = 8888;  // local port to listen for UDP packets
 #define CHANNEL2_PIN 7
 #define CHANNEL3_PIN 8
 
+int SetChannel1State(String state);
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(CHANNEL1_PIN, OUTPUT);
@@ -20,6 +22,8 @@ void setup() {
   digitalWrite(CHANNEL2_PIN, LOW);
   pinMode(CHANNEL3_PIN, OUTPUT);
   digitalWrite(CHANNEL3_PIN, LOW);
+
+  Particle.function("ch1_state", SetChannel1State);
   
   Udp.begin(localPort);
   setSyncProvider(getNtpTime);
@@ -37,39 +41,45 @@ void setup() {
   
 }
 
+int SetChannel1State(String state) {
+  if(state == "true") Channel1On();
+  else Channel1Off();
+  return 1;
+}
+
 void loop() {
   Particle.process();
   Alarm.delay(50); 
 }
 
 void Channel1On(){
-  Particle.publish("ch1_on");
+  Particle.publish("ch1", "on");
   digitalWrite(CHANNEL1_PIN, HIGH);  
 }
 
 void Channel1Off(){
-  Particle.publish("ch1_off");
+  Particle.publish("ch1", "off");
   digitalWrite(CHANNEL1_PIN, LOW);           
 }
 
 void Channel2On(){
-  Particle.publish("ch2_on");
+  Particle.publish("ch2", "off");
   digitalWrite(CHANNEL2_PIN, HIGH);  
 }
 
 void Channel2Off(){
-  Particle.publish("ch2_off");
+  Particle.publish("ch2", "off");
   digitalWrite(CHANNEL2_PIN, LOW);           
 }
 
 
 void Channel3On(){
-  Particle.publish("ch3_on");
+  Particle.publish("ch3", "off");
   digitalWrite(CHANNEL3_PIN, HIGH);  
 }
 
 void Channel3Off(){
-  Particle.publish("ch3_off");
+  Particle.publish("ch3", "off");
   digitalWrite(CHANNEL3_PIN, LOW);           
 }
 
