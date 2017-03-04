@@ -3,11 +3,12 @@
 
 Basic useful feature list:
 
-- [ ] Switches LED strips on and off on a schedule or triggered by a REST call
-- [X] Allows up to 3 devices to be controlled
-- [ ] Connects to your existing 2.4GHz WiFi Network for remote control and management
+- [ ] Switches LED strips on and off on a schedule or triggered by a REST call (REST call works, schedule is untested)
+- [X] Allows up to 3 devices to be controlled (channel 1 and 2 work, todo: channel 3 troubleshooting)
+- [ ] Manual override using buttons (doesn't currently work, todo: hardware troubleshooting)
+- [X] Connects to your existing 2.4GHz WiFi Network for remote control and management (handled by the Oak Config, todo: write guide)
 - [ ] Supports an SSD1306 OLED display for status and standalone operation
-- [ ] Integration with Domoticz
+- [X] Integration with Domoticz (todo: write guide. Is a shell script that does a [particle API call](https://docs.particle.io/reference/firmware/photon/#particle-function-))
 
 
 BOM:
