@@ -8,6 +8,10 @@ const int timeZone = 1;     // Central European Time
 WiFiUDP Udp;
 unsigned int localPort = 8888;  // local port to listen for UDP packets
 
+int output_1_state = 0;
+int output_2_state = 0;
+int output_3_state = 0;
+
 #define CHANNEL1_PIN 6
 #define CHANNEL2_PIN 7
 #define CHANNEL3_PIN 8
@@ -22,8 +26,10 @@ void setup() {
   digitalWrite(CHANNEL2_PIN, LOW);
   pinMode(CHANNEL3_PIN, OUTPUT);
   digitalWrite(CHANNEL3_PIN, LOW);
-
+  
   Particle.function("ch1_state", SetChannel1State);
+  Particle.function("ch2_state", SetChannel2State);
+  Particle.function("ch3_state", SetChannel3State);
   
   Udp.begin(localPort);
   setSyncProvider(getNtpTime);
@@ -47,38 +53,55 @@ int SetChannel1State(String state) {
   return 1;
 }
 
+int SetChannel2State(String state) {
+  if(state == "true") Channel2On();
+  else Channel2Off();
+  return 1;
+}
+
+int SetChannel3State(String state) {
+  if(state == "true") Channel3On();
+  else Channel3Off();
+  return 1;
+}
+
 void loop() {
   Particle.process();
   Alarm.delay(50); 
 }
 
 void Channel1On(){
+  output_1_state = 1;
   Particle.publish("ch1", "on");
   digitalWrite(CHANNEL1_PIN, HIGH);  
 }
 
 void Channel1Off(){
+  output_1_state = 0;
   Particle.publish("ch1", "off");
   digitalWrite(CHANNEL1_PIN, LOW);           
 }
 
 void Channel2On(){
-  Particle.publish("ch2", "off");
+  output_2_state = 1;
+  Particle.publish("ch2", "on");
   digitalWrite(CHANNEL2_PIN, HIGH);  
 }
 
 void Channel2Off(){
+  output_2_state = 0;
   Particle.publish("ch2", "off");
   digitalWrite(CHANNEL2_PIN, LOW);           
 }
 
-
 void Channel3On(){
-  Particle.publish("ch3", "off");
+  output_3_state = 1;
+  Particle.publish("ch3", "on");
   digitalWrite(CHANNEL3_PIN, HIGH);  
 }
 
 void Channel3Off(){
+  output_3_state = 0;
   Particle.publish("ch3", "off");
   digitalWrite(CHANNEL3_PIN, LOW);           
 }
