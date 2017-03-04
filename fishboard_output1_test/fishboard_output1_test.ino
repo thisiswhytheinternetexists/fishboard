@@ -42,8 +42,8 @@ void setup() {
 
   setTime(hour(),minute(),second(),day(),month(),year());
   
-  Alarm.alarmRepeat(07,00,00, Channel1On);
-  Alarm.alarmRepeat(17,00,00, Channel1Off);
+  //Alarm.alarmRepeat(07,00,00, Channel1On);
+  //Alarm.alarmRepeat(17,00,00, Channel1Off);
   
 }
 
